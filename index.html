@@ -33,12 +33,10 @@ to{opacity:1;}
 /* RING BOX */
 
 #box{
-
 font-size:120px;
 margin-top:150px;
 cursor:pointer;
 animation:bounce 1.5s infinite;
-
 }
 
 @keyframes bounce{
@@ -49,11 +47,9 @@ animation:bounce 1.5s infinite;
 /* RING */
 
 #ring{
-
 font-size:120px;
 opacity:0;
 transition:1s;
-
 }
 
 .show{
@@ -65,92 +61,98 @@ transform:scale(1.5);
 /* KNEEL BOY */
 
 #boy{
-
 font-size:100px;
 opacity:0;
 transition:1s;
-
 }
 
 
 /* BUTTON */
 
 button{
-
 font-size:25px;
 padding:15px 40px;
 border:none;
 border-radius:30px;
 cursor:pointer;
-
 }
 
 
 /* HEART */
 
 .heart{
-
 position:fixed;
 top:-10px;
 animation:fall linear infinite;
-
 }
 
 @keyframes fall{
-
 to{
 transform:translateY(100vh);
 opacity:0;
 }
-
 }
 
 
 /* FIREWORK */
 
 .fire{
-
 position:fixed;
 font-size:30px;
 animation:boom 1s linear;
-
 }
 
 @keyframes boom{
-
 from{transform:scale(0);}
 to{transform:scale(2);opacity:0;}
-
-}
-
-
-/* GALLERY */
-
-.gallery{
-
-margin-top:20px;
-
-}
-
-.gallery img{
-
-width:200px;
-border-radius:20px;
-margin:10px;
-box-shadow:0 0 20px white;
-
 }
 
 
 /* MESSAGE */
 
 #msg{
-
-font-size:28px;
+font-size:30px;
 margin-top:20px;
 white-space:pre-line;
-
 }
+
+
+/* ANIME BACKGROUND */
+
+.anime-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("anime-bg.jpg") no-repeat center center/cover;
+z-index:-2;
+animation:zoomAnime 20s infinite alternate;
+}
+
+/* ZOOM EFFECT */
+
+@keyframes zoomAnime{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+
+/* DARK OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
 
 </style>
 
@@ -204,13 +206,11 @@ document.getElementById("boy").style.opacity="1";
 
 document.getElementById("ring").classList.add("show");
 
-
 document.getElementById("msg").innerHTML=
 
 `
 
 Will You Be Mine Forever Karuvachiii? ❤️
-
 
 <br><br>
 
@@ -221,13 +221,17 @@ Will You Be Mine Forever Karuvachiii? ❤️
 }
 
 
-/* YES */
+/* YES CLICK → ANIME BACKGROUND */
 
 function yes(){
 
 document.body.innerHTML=
 
 `
+
+<div class="anime-bg"></div>
+
+<div class="overlay">
 
 <h1>She Said YES ❤️</h1>
 
@@ -252,8 +256,9 @@ document.body.innerHTML=
 
 </audio>
 
-`;
+</div>
 
+`;
 
 hearts();
 
@@ -264,7 +269,7 @@ type();
 }
 
 
-/* TYPE */
+/* TYPEWRITER */
 
 function type(){
 
@@ -328,7 +333,7 @@ t();
 }
 
 
-/* HEART */
+/* HEART RAIN */
 
 function hearts(){
 
@@ -381,7 +386,6 @@ setTimeout(()=>f.remove(),1000);
 
 
 </script>
-
 
 </body>
 </html>
