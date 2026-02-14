@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Karuvachiii Ultimate Proposal ❤️</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+text-align:center;
+font-family:Segoe UI;
+background:black;
+color:white;
+overflow:hidden;
+}
+
+/* STARS BACKGROUND */
+
+.star{
+position:absolute;
+color:white;
+animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3;}
+to{opacity:1;}
+}
+
+
+/* RING BOX */
+
+#box{
+
+font-size:120px;
+margin-top:150px;
+cursor:pointer;
+animation:bounce 1.5s infinite;
+
+}
+
+@keyframes bounce{
+50%{transform:translateY(-20px);}
+}
+
+
+/* RING */
+
+#ring{
+
+font-size:120px;
+opacity:0;
+transition:1s;
+
+}
+
+.show{
+opacity:1;
+transform:scale(1.5);
+}
+
+
+/* KNEEL BOY */
+
+#boy{
+
+font-size:100px;
+opacity:0;
+transition:1s;
+
+}
+
+
+/* BUTTON */
+
+button{
+
+font-size:25px;
+padding:15px 40px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+
+/* HEART */
+
+.heart{
+
+position:fixed;
+top:-10px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+
+}
+
+
+/* FIREWORK */
+
+.fire{
+
+position:fixed;
+font-size:30px;
+animation:boom 1s linear;
+
+}
+
+@keyframes boom{
+
+from{transform:scale(0);}
+to{transform:scale(2);opacity:0;}
+
+}
+
+
+/* GALLERY */
+
+.gallery{
+
+margin-top:20px;
+
+}
+
+.gallery img{
+
+width:200px;
+border-radius:20px;
+margin:10px;
+box-shadow:0 0 20px white;
+
+}
+
+
+/* MESSAGE */
+
+#msg{
+
+font-size:28px;
+margin-top:20px;
+white-space:pre-line;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1 id="title">Karuvachiii ❤️</h1>
+
+<div id="box" onclick="openBox()">🎁</div>
+
+<div id="boy">🤵</div>
+
+<div id="ring">💍</div>
+
+<div id="msg"></div>
+
+
+<script>
+
+
+/* STARS */
+
+for(let i=0;i<100;i++){
+
+let star=document.createElement("div");
+
+star.innerHTML="✨";
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.fontSize=Math.random()*10+10+"px";
+
+document.body.appendChild(star);
+
+}
+
+
+/* OPEN BOX */
+
+function openBox(){
+
+document.getElementById("box").style.display="none";
+
+document.getElementById("boy").style.opacity="1";
+
+document.getElementById("ring").classList.add("show");
+
+
+document.getElementById("msg").innerHTML=
+
+`
+
+Will You Be Mine Forever Karuvachiii? ❤️
+
+
+<br><br>
+
+<button onclick="yes()">Yes ❤️</button>
+
+`;
+
+}
+
+
+/* YES */
+
+function yes(){
+
+document.body.innerHTML=
+
+`
+
+<h1>She Said YES ❤️</h1>
+
+
+<div class="gallery">
+
+<img src="left.jpg">
+
+<img src="Karuvachiii.jpg">
+
+<img src="right.jpg">
+
+</div>
+
+
+<div id="msg"></div>
+
+
+<audio autoplay loop>
+
+<source src="darbar.mp3">
+
+</audio>
+
+`;
+
+
+hearts();
+
+fireworks();
+
+type();
+
+}
+
+
+/* TYPE */
+
+function type(){
+
+let text=`
+
+My Love Karuvachiii ❤️
+
+Always, I tell you that you are the reason behind my smile and my happiness. 
+We have fought many times, but every time we found our way back to each other, because our love is that strong.
+
+Even though we are facing many problems now, I truly believe and hope that everything will be alright soon.
+
+We will live the life we always dreamed of — with so much love, a few little fights, 
+traveling the whole world together, spending every moment side by side, 
+and creating beautiful memories to share with our future children.
+
+Our love is powerful enough to heal every pain. 
+Soon, we will be together with the blessings and support of all our families. 
+You are my today, and all of my tomorrows.
+
+When I first met you, I was afraid of falling in love. 
+But now that I am in love with you, I am afraid of losing you.
+
+I want to love you without conditions, talk to you without intentions, 
+give to you without reasons, and care for you without expectations.
+
+You are my dream.
+
+My life.
+
+My everything.
+
+
+I Love You Dii Pondatii ❤️
+
+
+Forever Yours,
+
+Mylu ❤️
+
+`;
+
+let i=0;
+
+function t(){
+
+if(i<text.length){
+
+document.getElementById("msg").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(t,50);
+
+}
+
+}
+
+t();
+
+}
+
+
+/* HEART */
+
+function hearts(){
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.innerHTML="❤️";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize="30px";
+
+h.style.animationDuration="3s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),3000);
+
+},200);
+
+}
+
+
+/* FIREWORK */
+
+function fireworks(){
+
+setInterval(()=>{
+
+let f=document.createElement("div");
+
+f.innerHTML="✨";
+
+f.className="fire";
+
+f.style.left=Math.random()*100+"vw";
+
+f.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),1000);
+
+},500);
+
+}
+
+
+</script>
+
+
+</body>
+</html>
